@@ -2,6 +2,7 @@
  * Home Page - TRM Colombia
  * Design: Fintech Moderno con Glassmorphism
  * - Hero section with current TRM
+ * - Date selector for historical queries
  * - Calculator for currency conversion
  * - Historical chart
  * - Conversion tables
@@ -10,6 +11,7 @@
 import { useMemo } from 'react';
 import Header from '@/components/Header';
 import TRMDisplay from '@/components/TRMDisplay';
+import DateSelector from '@/components/DateSelector';
 import Calculator from '@/components/Calculator';
 import TRMChart from '@/components/TRMChart';
 import HistoricalTable from '@/components/HistoricalTable';
@@ -17,7 +19,7 @@ import Footer from '@/components/Footer';
 import { useTRM } from '@/hooks/useTRM';
 
 export default function Home() {
-  const { current, historical, loading, error, refresh } = useTRM();
+  const { current, historical, loading, error, refresh, fetchTRMByDate } = useTRM();
 
   const previousTRM = useMemo(() => {
     return historical.length > 1 ? historical[1] : null;
@@ -54,6 +56,12 @@ export default function Home() {
             </div>
           </div>
         )}
+
+        {/* Date Selector Section */}
+        <DateSelector 
+          onFetchTRM={fetchTRMByDate} 
+          currentTRM={currentTRMValue} 
+        />
 
         {/* Calculator Section */}
         <Calculator trm={currentTRMValue} />

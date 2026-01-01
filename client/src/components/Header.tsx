@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/', label: 'TRM Hoy' },
+  { href: '/#consultar', label: 'Consultar Fecha' },
   { href: '/#calculadora', label: 'Calculadora' },
   { href: '/#historico', label: 'Histórico' },
   { href: '/#grafica', label: 'Gráfica' },
@@ -57,7 +58,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
+                    'px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200',
                     'hover:bg-primary/10 hover:text-primary',
                     location === item.href
                       ? 'bg-primary/10 text-primary'
