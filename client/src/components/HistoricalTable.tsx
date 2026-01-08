@@ -60,9 +60,9 @@ export default function HistoricalTable({
     direction: 'up' | 'down' | 'neutral';
   }) => {
     if (direction === 'up')
-      return <TrendingUp className="w-4 h-4 text-red-500" />;
+      return <TrendingUp className="w-4 h-4 text-green-500" />;
     if (direction === 'down')
-      return <TrendingDown className="w-4 h-4 text-green-500" />;
+      return <TrendingDown className="w-4 h-4 text-red-500" />;
     return <Minus className="w-4 h-4 text-gray-400" />;
   };
 
@@ -145,8 +145,8 @@ export default function HistoricalTable({
                           <TableCell
                             className={cn(
                               'text-right font-mono text-sm',
-                              item.direction === 'up' && 'text-red-500',
-                              item.direction === 'down' && 'text-green-500',
+                              item.direction === 'up' && 'text-green-500',
+                              item.direction === 'down' && 'text-red-500',
                               item.direction === 'neutral' && 'text-gray-400'
                             )}
                           >

@@ -146,9 +146,9 @@ export default function TRMDisplay({
                 className={cn(
                   'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium',
                   change.direction === 'up' &&
-                    'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
-                  change.direction === 'down' &&
                     'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+                  change.direction === 'down' &&
+                    'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
                   change.direction === 'neutral' &&
                     'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400'
                 )}
